@@ -4,7 +4,7 @@
 
 IMDb provides a number of datasets in order to analyse titles and their ratings, however, this dataset is insufficient for analysing ratings *over time*. Indeed, IMDb only provides the "weighted average of all the individual user ratings" but not the individual ratings provided by users as well as when the ratings were provided.
 
-By combining the datasets provided IMDb with another dataset consisting of a large number of reviews including the rating given and when it was given, it will be possible to answer questions like:
+By combining the datasets provided IMDb with another dataset consisting of a large number of reviews, including the rating given and when it was given, it will be possible to answer questions like:
 
 * Do reviews tend to get more positive/negative over time?
 * Are there differences in ratings between reviews left during the week and the ones left during the weekend?
@@ -31,15 +31,28 @@ By combining the datasets provided IMDb with another dataset consisting of a lar
 
 `titles`: Information about the show reviewed.
 
-* `title_id`, `title`, `title_type`, `year`, `length`, `genres`
+* `title_id`: the IMBd unique title ID
+* `title`: the primary title of the movie, TV show, etc.
+* `title_type`: whether the title is a movie, a TV show, etc.
+* `year`: the year when the title was released
+* `length`: the length of the title in minutes
+* `genres`: a list of genres corresponding to the title.
 
 `principals`: Information about the principal cast/crew for titles
 
-* `title_id`, `ordering`, `name`, `category`
+* `title_id`: the IMBd unique title ID
+* `ordering`: a number to uniquely identify rows for a given title ID
+* `name`: the name of the principal (name of the actor, director, etc.)
+* `category`: the category of principal (whether the principal is an actor, director, etc.).
 
-`time`: the date of all reviews, broken down into specific units
+`dates`: the date of all reviews, broken down into specific units
 
-* `review_date`, `day`, `week`, `month`, `year`, `weekday`
+* `review_date`: the date of the review
+* `day`: the day of the month of the review
+* `week`: the week of the year of the review
+* `month`: the month of the year of the review
+* `year`: the year of the review
+* `weekday`: the day of the week of the review (Monday=1).
 
 ## Choice of technology
 
